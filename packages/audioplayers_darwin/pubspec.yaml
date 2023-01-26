@@ -14,7 +14,7 @@ flutter:
         pluginClass: AudioplayersDarwinPlugin
 
 dependencies:
-  audioplayers_platform_interface: ^3.0.0
+  audioplayers_platform_interface: ">=3.0.0 <5.0.0"
   flutter:
     sdk: flutter
 
