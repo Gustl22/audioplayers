@@ -9,3 +9,31 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/packages/audioplayers"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pub"
+    directory: "/packages/audioplayers_android"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pub"
+    directory: "/packages/audioplayers_darwin"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pub"
+    directory: "/packages/audioplayers_linux"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pub"
+    directory: "/packages/audioplayers_platform_interface"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pub"
+    directory: "/packages/audioplayers_web"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pub"
+    directory: "/packages/audioplayers_windows"
+    schedule:
+      interval: "weekly"
