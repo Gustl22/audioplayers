@@ -67,6 +67,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
+        with:
+            flutter-version: '3.3.10'
       - uses: bluefireteam/melos-action@main
 
       - run: melos run format-check
@@ -80,6 +82,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
+        with:
+            flutter-version: '3.3.10'
       - uses: bluefireteam/melos-action@main
       - uses: nanasess/setup-chromedriver@v1
 
@@ -125,6 +129,8 @@ jobs:
         uses: android-actions/setup-android@v2
 
       - uses: subosito/flutter-action@v2
+        with:
+            flutter-version: '3.3.10'
       - uses: bluefireteam/melos-action@main
 
       - name: Download Android emulator image
@@ -158,6 +164,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
+        with:
+            flutter-version: '3.3.10'
       - uses: bluefireteam/melos-action@main
 
       - name: List all simulators
@@ -183,6 +191,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
+        with:
+            flutter-version: '3.3.10'
       - uses: bluefireteam/melos-action@main
 
       - name: setup-cocoapods
@@ -205,6 +215,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
+        with:
+            flutter-version: '3.3.10'
       - uses: bluefireteam/melos-action@main
       
       - name: Start audio server
@@ -232,6 +244,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
+        with:
+            flutter-version: '3.3.10'
       - uses: bluefireteam/melos-action@main
       - name: Install Flutter requirements for Linux
         run: |
