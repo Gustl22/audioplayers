@@ -16,7 +16,7 @@ jobs:
       fatal_warnings: false
   prepare-release:
     name: Prepare release
-    needs: call-min-flutter-test
+#    needs: call-min-flutter-test
     permissions:
       contents: write
       pull-requests: write
@@ -30,7 +30,7 @@ jobs:
           git rm --cached example/server/public/files/audio/coins_non_ascii_и.wav
         working-directory: packages/audioplayers
         shell: bash
-      - uses: bluefireteam/melos-action@v3
+      - uses: bluefireteam/melos-action@main
         with:
           run-versioning: ${{ inputs.prerelease == false }}
           run-versioning-prerelease: ${{ inputs.prerelease == true }}
