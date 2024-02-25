@@ -1,3 +1,32 @@
+## 5.0.0-dev.0
+
+> Note: This release has breaking changes.
+
+ - **FIX**(android): `onComplete` is not called when audio has completed playing ([#1523](https://github.com/bluefireteam/audioplayers/issues/1523)). ([293d6c0e](https://github.com/bluefireteam/audioplayers/commit/293d6c0eec1d89ad200b2914cae0adf644b25013))
+ - **FIX**: Timeout on setting same source twice  ([#1520](https://github.com/bluefireteam/audioplayers/issues/1520)). ([5d164d1f](https://github.com/bluefireteam/audioplayers/commit/5d164d1f20463a8a31a228cd1d85252d47ae256e))
+ - **FIX**: test and fix compatibility with min flutter version ([#1510](https://github.com/bluefireteam/audioplayers/issues/1510)). ([9f39e95f](https://github.com/bluefireteam/audioplayers/commit/9f39e95ff7913d8fc30fff27fef7aefc32de26fb))
+ - **FIX**(android): Add AGP 8 support with namespace property ([#1514](https://github.com/bluefireteam/audioplayers/issues/1514)). ([8d7b322e](https://github.com/bluefireteam/audioplayers/commit/8d7b322e79fd802fb75ca72f5c8ac388754cd406))
+ - **FIX**: onPrepared event to wait until player is ready / finished loading the source ([#1469](https://github.com/bluefireteam/audioplayers/issues/1469)). ([50f56365](https://github.com/bluefireteam/audioplayers/commit/50f56365f8e512df0fc5bdb7222614389cbd4ea0))
+ - **FIX**: rework dispose ([#1480](https://github.com/bluefireteam/audioplayers/issues/1480)). ([c64ef6d9](https://github.com/bluefireteam/audioplayers/commit/c64ef6d914a52743128c717b90c4da0abbd7538d))
+ - **FIX**: dispose player implementation ([#1470](https://github.com/bluefireteam/audioplayers/issues/1470)). ([d9026c15](https://github.com/bluefireteam/audioplayers/commit/d9026c1538cc83dfba5745771ad71c307b6da852))
+ - **FIX**(android): Avoid calling onDuration on position event (closes [#136](https://github.com/bluefireteam/audioplayers/issues/136)) ([#1460](https://github.com/bluefireteam/audioplayers/issues/1460)). ([6cfb3753](https://github.com/bluefireteam/audioplayers/commit/6cfb3753cd8003f341d97e0b2417d4512f452267))
+ - **FIX**(android): reset prepared state on player error ([#1425](https://github.com/bluefireteam/audioplayers/issues/1425)). ([6f24c8f5](https://github.com/bluefireteam/audioplayers/commit/6f24c8f57e4549edbf7d68a021d1d94371c23f3f))
+ - **FIX**(android): playing at playback rate `1.0` in android API level < 23 (fixes [#1344](https://github.com/bluefireteam/audioplayers/issues/1344)) ([#1390](https://github.com/bluefireteam/audioplayers/issues/1390)). ([b248e71d](https://github.com/bluefireteam/audioplayers/commit/b248e71dabf923072f1fd14355b4e0230c9a6593))
+ - **FIX**(android): Avoid ConcurrentModificationException ([#1297](https://github.com/bluefireteam/audioplayers/issues/1297)). ([d15ef5ab](https://github.com/bluefireteam/audioplayers/commit/d15ef5ab93f11e2f19089af08f1533fcdc1397e6))
+ - **FIX**(android): lowLatency bugs (closes [#1176](https://github.com/bluefireteam/audioplayers/issues/1176), closes [#1193](https://github.com/bluefireteam/audioplayers/issues/1193), closes [#1165](https://github.com/bluefireteam/audioplayers/issues/1165)) ([#1272](https://github.com/bluefireteam/audioplayers/issues/1272)). ([541578cc](https://github.com/bluefireteam/audioplayers/commit/541578cc50f3856c23c393faa1a71380b3b49222))
+ - **FIX**(android): revert compileSdkVersion to be compatible with flutter.compileSdkVersion ([#1273](https://github.com/bluefireteam/audioplayers/issues/1273)). ([0b9fed43](https://github.com/bluefireteam/audioplayers/commit/0b9fed43d9dfa90870826dc9a34d1a0d730bd78d))
+ - **FIX**(android): emit onPositionChanged when seek is completed (closes [#1259](https://github.com/bluefireteam/audioplayers/issues/1259)) ([#1265](https://github.com/bluefireteam/audioplayers/issues/1265)). ([be7ac6a9](https://github.com/bluefireteam/audioplayers/commit/be7ac6a957fccadf5bcecf0f1fbea197d32bda21))
+ - **FIX**(android): bugs from integration tests ([#1247](https://github.com/bluefireteam/audioplayers/issues/1247)). ([6fad1cc4](https://github.com/bluefireteam/audioplayers/commit/6fad1cc4443e623e5c94519f130b4004b2dc3857))
+ - **FIX**: Fix lowLatency mode for Android ([#1193](https://github.com/bluefireteam/audioplayers/issues/1193)) ([#1224](https://github.com/bluefireteam/audioplayers/issues/1224)). ([a25ca284](https://github.com/bluefireteam/audioplayers/commit/a25ca284835252147c85944575c7e71a3ef6abc4))
+ - **FIX**(android): getDuration, getPosition causes MEDIA_ERROR_UNKNOWN ([#1172](https://github.com/bluefireteam/audioplayers/issues/1172)). ([51b4c73e](https://github.com/bluefireteam/audioplayers/commit/51b4c73eaff5c60d1c3c3e42ae783df07d34be09))
+ - **FEAT**(android): add `setBalance` ([#58](https://github.com/bluefireteam/audioplayers/issues/58)) ([#1444](https://github.com/bluefireteam/audioplayers/issues/1444)). ([3b5de50e](https://github.com/bluefireteam/audioplayers/commit/3b5de50ea7fa5248165616fc1ffd80da6c66583a))
+ - **FEAT**(android): wait for source to be prepared ([#1191](https://github.com/bluefireteam/audioplayers/issues/1191)). ([5eeca894](https://github.com/bluefireteam/audioplayers/commit/5eeca8940e764546023567fa2f6b1bc3802f97d3))
+ - **FEAT**: Upgrade flame lint dependency ([#1132](https://github.com/bluefireteam/audioplayers/issues/1132)). ([0d6dae3e](https://github.com/bluefireteam/audioplayers/commit/0d6dae3efc4a73abeb554fd0862d64fda0269066))
+ - **DOCS**: update AudioCache explanation, migration guide, replace package READMEs ([#1457](https://github.com/bluefireteam/audioplayers/issues/1457)). ([b8eb1974](https://github.com/bluefireteam/audioplayers/commit/b8eb197435631fafeaa9a26eb76aca8e43e86420))
+ - **DOCS**: Fix repos and homepages on pubspecs ([#1349](https://github.com/bluefireteam/audioplayers/issues/1349)). ([0bdde4d9](https://github.com/bluefireteam/audioplayers/commit/0bdde4d9f8f62487cdcfe96221216eba03b31060))
+ - **BREAKING** **FEAT**: event channel ([#1352](https://github.com/bluefireteam/audioplayers/issues/1352)). ([c9fd6a76](https://github.com/bluefireteam/audioplayers/commit/c9fd6a762c8c346d8d5598e3550c5571a5e460f0))
+ - **BREAKING** **FEAT**(android): configurable SoundPool and `AudioManager.mode` ([#1388](https://github.com/bluefireteam/audioplayers/issues/1388)). ([5697f187](https://github.com/bluefireteam/audioplayers/commit/5697f187bcca64de2e519f8f49aaf4817fcf6398))
+
 ## 4.0.3
 
  - **FIX**(android): Released wrong source in LOW_LATENCY mode ([#1672](https://github.com/bluefireteam/audioplayers/issues/1672)). ([d9c5f693](https://github.com/bluefireteam/audioplayers/commit/d9c5f693cafab21b67b785de6244c3c371344a53))

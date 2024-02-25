@@ -1,3 +1,24 @@
+## 4.0.0-dev.0
+
+> Note: This release has breaking changes.
+
+ - **FIX**: Timeout on setting same source twice  ([#1520](https://github.com/bluefireteam/audioplayers/issues/1520)). ([5d164d1f](https://github.com/bluefireteam/audioplayers/commit/5d164d1f20463a8a31a228cd1d85252d47ae256e))
+ - **FIX**: test and fix compatibility with min flutter version ([#1510](https://github.com/bluefireteam/audioplayers/issues/1510)). ([9f39e95f](https://github.com/bluefireteam/audioplayers/commit/9f39e95ff7913d8fc30fff27fef7aefc32de26fb))
+ - **FIX**: onPrepared event to wait until player is ready / finished loading the source ([#1469](https://github.com/bluefireteam/audioplayers/issues/1469)). ([50f56365](https://github.com/bluefireteam/audioplayers/commit/50f56365f8e512df0fc5bdb7222614389cbd4ea0))
+ - **FIX**: rework dispose ([#1480](https://github.com/bluefireteam/audioplayers/issues/1480)). ([c64ef6d9](https://github.com/bluefireteam/audioplayers/commit/c64ef6d914a52743128c717b90c4da0abbd7538d))
+ - **FIX**: dispose player implementation ([#1470](https://github.com/bluefireteam/audioplayers/issues/1470)). ([d9026c15](https://github.com/bluefireteam/audioplayers/commit/d9026c1538cc83dfba5745771ad71c307b6da852))
+ - **FIX**: Duration precision on Windows ([#1342](https://github.com/bluefireteam/audioplayers/issues/1342)). ([3cda1a65](https://github.com/bluefireteam/audioplayers/commit/3cda1a65dc0425c332ed2eb3619cd88531f0ea49))
+ - **FIX**(windows): send onDuration event when play/resume ([#1245](https://github.com/bluefireteam/audioplayers/issues/1245)). ([8108ff42](https://github.com/bluefireteam/audioplayers/commit/8108ff42d05c7f995d8289345302c6ac6d298f67))
+ - **FIX**: Windows Failed to seekTo longer than 3:30s ([#1125](https://github.com/bluefireteam/audioplayers/issues/1125)). ([8db4dcaa](https://github.com/bluefireteam/audioplayers/commit/8db4dcaa1446e1442c63134df80b95af852c078f))
+ - **FEAT**(windows): show nuget download info explicitely in verbose mode ([#1449](https://github.com/bluefireteam/audioplayers/issues/1449)). ([136028fa](https://github.com/bluefireteam/audioplayers/commit/136028fa1cbcf38f80e9cc7ad78b3bb89d2c6d30))
+ - **FEAT**: select decoder automatically on windows ([#1221](https://github.com/bluefireteam/audioplayers/issues/1221)). ([ff78a42f](https://github.com/bluefireteam/audioplayers/commit/ff78a42f842e146df7dc98d6d00ae27821355653))
+ - **FEAT**: Upgrade flame lint dependency ([#1132](https://github.com/bluefireteam/audioplayers/issues/1132)). ([0d6dae3e](https://github.com/bluefireteam/audioplayers/commit/0d6dae3efc4a73abeb554fd0862d64fda0269066))
+ - **FEAT**: Linux platform support (closes [#798](https://github.com/bluefireteam/audioplayers/issues/798)) ([#1110](https://github.com/bluefireteam/audioplayers/issues/1110)). ([74616c54](https://github.com/bluefireteam/audioplayers/commit/74616c5471fb942d8f08c41de50c93d4387f8916))
+ - **DOCS**: update AudioCache explanation, migration guide, replace package READMEs ([#1457](https://github.com/bluefireteam/audioplayers/issues/1457)). ([b8eb1974](https://github.com/bluefireteam/audioplayers/commit/b8eb197435631fafeaa9a26eb76aca8e43e86420))
+ - **DOCS**: Fix LICENSE files for windows and linux ([#1431](https://github.com/bluefireteam/audioplayers/issues/1431)). ([1f84e857](https://github.com/bluefireteam/audioplayers/commit/1f84e857a112e663fff73c4e7c6875ebb72c783d))
+ - **DOCS**: Fix repos and homepages on pubspecs ([#1349](https://github.com/bluefireteam/audioplayers/issues/1349)). ([0bdde4d9](https://github.com/bluefireteam/audioplayers/commit/0bdde4d9f8f62487cdcfe96221216eba03b31060))
+ - **BREAKING** **FEAT**: event channel ([#1352](https://github.com/bluefireteam/audioplayers/issues/1352)). ([c9fd6a76](https://github.com/bluefireteam/audioplayers/commit/c9fd6a762c8c346d8d5598e3550c5571a5e460f0))
+
 ## 3.1.0
 
  - **REFACTOR**: Lint Kotlin, C and C++ code ([#1610](https://github.com/bluefireteam/audioplayers/issues/1610)). ([05394668](https://github.com/bluefireteam/audioplayers/commit/0539466850aaa49a0bde9448939c6c3d536dd6e2))
