@@ -95,22 +95,28 @@ void main() async {
       testWidgets(
         '#setSource #getPosition and #getDuration ${td.source}',
         (tester) async {
+          print('Prepare Source ${td.source}');
           await tester.prepareSource(
             playerId: playerId,
             platform: platform,
             testData: td,
           );
+          print('Get current position ${td.source}');
           expect(await platform.getCurrentPosition(playerId), 0);
+          print('Get duration ${td.source}');
           final durationMs = await platform.getDuration(playerId);
           expect(
             durationMs != null ? Duration(milliseconds: durationMs) : null,
             // TODO(gustl22): once duration is always null for streams,
             //  then can remove fallback for Duration.zero
-            (Duration? actual) => durationRangeMatcher(
+            (Duration? actual) {
+              print('Tested duration $actual | ${td.source}');
+              return durationRangeMatcher(
               actual ?? Duration.zero,
               td.duration ?? Duration.zero,
               deviation: Duration(milliseconds: td.isVBR ? 100 : 1),
-            ),
+            );
+            },
           );
         },
         // FIXME(gustl22): cannot determine initial duration for VBR on Linux
