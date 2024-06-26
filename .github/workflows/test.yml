@@ -306,6 +306,8 @@ jobs:
 #        with:
 #          limit-access-to-actor: false
 
+      - name: Allow apps from unidentified developers
+        run: sudo spctl --master-disable
       - name: Run Flutter integration tests
         working-directory: ./packages/audioplayers/example
         # Need to execute lib and app tests one by one, see: https://github.com/flutter/flutter/issues/101031
@@ -332,6 +334,8 @@ jobs:
 #        with:
 #          limit-access-to-actor: false
 
+      - name: Allow apps from unidentified developers
+        run: sudo spctl --master-disable
       - name: Run Flutter integration tests
         working-directory: ./packages/audioplayers/example
         # Need to execute lib and app tests one by one, see: https://github.com/flutter/flutter/issues/101031
