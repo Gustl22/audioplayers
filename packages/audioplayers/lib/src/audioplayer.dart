@@ -221,13 +221,13 @@ class AudioPlayer {
 
   Future<void> setAudioContext(AudioContext ctx) async {
     await creatingCompleter.future;
-    return _platform.setAudioContext(playerId, ctx);
+    await _platform.setAudioContext(playerId, ctx);
   }
 
   Future<void> setPlayerMode(PlayerMode mode) async {
     _mode = mode;
     await creatingCompleter.future;
-    return _platform.setPlayerMode(playerId, mode);
+    await _platform.setPlayerMode(playerId, mode);
   }
 
   /// Pauses the audio that is currently playing.
@@ -307,7 +307,7 @@ class AudioPlayer {
   Future<void> setBalance(double balance) async {
     _balance = balance;
     await creatingCompleter.future;
-    return _platform.setBalance(playerId, balance);
+    await _platform.setBalance(playerId, balance);
   }
 
   /// Sets the volume (amplitude).
@@ -317,7 +317,7 @@ class AudioPlayer {
   Future<void> setVolume(double volume) async {
     _volume = volume;
     await creatingCompleter.future;
-    return _platform.setVolume(playerId, volume);
+    await _platform.setVolume(playerId, volume);
   }
 
   /// Sets the release mode.
@@ -326,7 +326,7 @@ class AudioPlayer {
   Future<void> setReleaseMode(ReleaseMode releaseMode) async {
     _releaseMode = releaseMode;
     await creatingCompleter.future;
-    return _platform.setReleaseMode(playerId, releaseMode);
+    await _platform.setReleaseMode(playerId, releaseMode);
   }
 
   /// Sets the playback rate - call this after first calling play() or resume().
@@ -336,7 +336,7 @@ class AudioPlayer {
   Future<void> setPlaybackRate(double playbackRate) async {
     _playbackRate = playbackRate;
     await creatingCompleter.future;
-    return _platform.setPlaybackRate(playerId, playbackRate);
+    await _platform.setPlaybackRate(playerId, playbackRate);
   }
 
   /// Sets the audio source for this player.
