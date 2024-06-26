@@ -484,12 +484,12 @@ extension on WidgetTester {
 
     Future<void> setSource(Source source) async {
       if (source is UrlSource) {
-        return platform.setSourceUrl(playerId, source.url);
+        await platform.setSourceUrl(playerId, source.url);
       } else if (source is AssetSource) {
         final cachePath = await AudioCache.instance.loadPath(source.path);
-        return platform.setSourceUrl(playerId, cachePath, isLocal: true);
+        await platform.setSourceUrl(playerId, cachePath, isLocal: true);
       } else if (source is BytesSource) {
-        return platform.setSourceBytes(playerId, source.bytes);
+        await platform.setSourceBytes(playerId, source.bytes);
       } else {
         throw 'Unknown source type: ${source.runtimeType}';
       }
