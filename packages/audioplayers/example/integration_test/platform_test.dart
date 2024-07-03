@@ -112,10 +112,10 @@ void main() async {
             (Duration? actual) {
               print('Tested duration $actual | ${td.source}');
               return durationRangeMatcher(
-              actual ?? Duration.zero,
-              td.duration ?? Duration.zero,
-              deviation: Duration(milliseconds: td.isVBR ? 100 : 1),
-            );
+                actual ?? Duration.zero,
+                td.duration ?? Duration.zero,
+                deviation: Duration(milliseconds: td.isVBR ? 100 : 1),
+              );
             },
           );
         },
@@ -474,12 +474,14 @@ extension on WidgetTester {
     required LibSourceTestData testData,
   }) async {
     final eventStream = platform.getEventStream(playerId);
-    final futurePrepared = eventStream
-        .firstWhere(
+    final preparedCompleter = Completer();
+    final preparedStream = eventStream
+        .where(
           (event) =>
               event.eventType == AudioEventType.prepared &&
               (event.isPrepared ?? false),
-        );
+        )
+        .listen((_) => preparedCompleter.complete());
 
     Future<void> setSource(Source source) async {
       if (source is UrlSource) {
@@ -499,6 +501,8 @@ extension on WidgetTester {
 
     // Wait simultaneously to ensure all errors are propagated through the same
     // future.
-    await Future.wait([futureSetSource, futurePrepared]);
+    await Future.wait([futureSetSource, preparedCompleter.future])
+        .timeout(const Duration(seconds: 30));
+    await preparedStream.cancel();
   }
 }
