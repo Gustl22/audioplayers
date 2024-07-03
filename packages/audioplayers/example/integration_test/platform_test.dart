@@ -507,9 +507,8 @@ extension on WidgetTester {
     try {
       await Future.wait([futureSetSource, preparedCompleter.future])
           .timeout(const Duration(seconds: 30));
-    } on Exception catch (_) {
+    } finally {
       await preparedStream.cancel();
-      rethrow;
     }
   }
 }
