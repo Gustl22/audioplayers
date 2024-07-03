@@ -481,7 +481,10 @@ extension on WidgetTester {
               event.eventType == AudioEventType.prepared &&
               (event.isPrepared ?? false),
         )
-        .listen((_) => preparedCompleter.complete());
+        .listen(
+          (_) => preparedCompleter.complete(),
+          onError: preparedCompleter.completeError,
+        );
 
     Future<void> setSource(Source source) async {
       if (source is UrlSource) {
@@ -501,8 +504,12 @@ extension on WidgetTester {
 
     // Wait simultaneously to ensure all errors are propagated through the same
     // future.
-    await Future.wait([futureSetSource, preparedCompleter.future])
-        .timeout(const Duration(seconds: 30));
-    await preparedStream.cancel();
+    try {
+      await Future.wait([futureSetSource, preparedCompleter.future])
+          .timeout(const Duration(seconds: 30));
+    } on Exception catch (_) {
+      await preparedStream.cancel();
+      rethrow;
+    }
   }
 }
