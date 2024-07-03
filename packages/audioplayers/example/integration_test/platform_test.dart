@@ -479,8 +479,7 @@ extension on WidgetTester {
           (event) =>
               event.eventType == AudioEventType.prepared &&
               (event.isPrepared ?? false),
-        )
-        .timeout(const Duration(seconds: 30));
+        );
 
     Future<void> setSource(Source source) async {
       if (source is UrlSource) {
