@@ -42,10 +42,20 @@ void main() async {
       // 'getExternalStorageDirectories':getExternalStorageDirectories,
       'getDownloadsDirectory': getDownloadsDirectory,
     };
+    print('Absolute');
     for (final pathMethod in pathMethods.entries) {
       try {
         final dir = await pathMethod.value();
-        print('${pathMethod.key}: ${dir?.absolute.path}');
+        print('${pathMethod.key}: ${dir?.absolute.path.replaceAll('xyz.luan.audioplayers.example', 'com.flutter.example')}');
+      } catch (e) {
+        print('${pathMethod.key}: no implementation');
+      }
+    }
+    print('Relative');
+    for (final pathMethod in pathMethods.entries) {
+      try {
+        final dir = await pathMethod.value();
+        print('${pathMethod.key}: ${dir?.path.replaceAll('xyz.luan.audioplayers.example', 'com.flutter.example')}');
       } catch (e) {
         print('${pathMethod.key}: no implementation');
       }
