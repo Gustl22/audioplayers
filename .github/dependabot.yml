@@ -1,4 +1,4 @@
-# Weekly dependency updates: one grouped PR per ecosystem (incl. major bumps).
+# Weekly dependency updates: one grouped PR per ecosystem and directory (incl. major bumps).
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -25,27 +25,40 @@ updates:
     commit-message:
       prefix: chore
 
+  # One entry per directory: a multi-directory group fails to commit
+  # changes that land outside the directory currently being updated.
   - package-ecosystem: gradle
-    directories:
-      - /packages/audioplayers_android/android
-      - /packages/audioplayers_android_exo/android
-      - /packages/audioplayers/example/android
+    directory: /packages/audioplayers_android/android
     schedule:
       interval: weekly
     open-pull-requests-limit: 1
     groups:
-      gradle:
+      gradle-android:
         patterns: ["*"]
     commit-message:
       prefix: chore
 
-  - package-ecosystem: swift
-    directory: /packages/audioplayers_darwin/darwin/audioplayers_darwin
+  - package-ecosystem: gradle
+    directory: /packages/audioplayers_android_exo/android
     schedule:
       interval: weekly
     open-pull-requests-limit: 1
     groups:
-      swift:
+      gradle-android-exo:
         patterns: ["*"]
     commit-message:
       prefix: chore
+
+  - package-ecosystem: gradle
+    directory: /packages/audioplayers/example/android
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    groups:
+      gradle-example:
+        patterns: ["*"]
+    commit-message:
+      prefix: chore
+
+  # No swift entry: Package.swift only depends on the local, Flutter-generated
+  # FlutterFramework package, which doesn't exist in the repository.
